@@ -4,7 +4,7 @@ def count_calls():
     return calls
 
 
-def string_info():
+def string_info(string):
     count_calls()
     amount = len(string)
     cap_str = string.upper()
@@ -12,10 +12,11 @@ def string_info():
     return amount, cap_str, low_str
 
 
-def is_contains():
+def is_contains(string, list_to_search):
     count_calls()
-
-    if string in list_to_search:
+    for i in range(len(list_to_search)):
+        list_to_search[i] = list_to_search[i].lower()
+    if string.lower() in list_to_search:
         return True
 
     else:
@@ -23,8 +24,4 @@ def is_contains():
 
 
 calls = 0
-string = input()
-list_to_search = [input()]
-string_info()
-is_contains()
 print(calls)
